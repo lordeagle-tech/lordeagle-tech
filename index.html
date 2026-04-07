@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lord Eagle | Ethical Hacker & Pentester</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cyan: #00f5ff;
+      --cyan2: #00bcd4;
+      --cyan3: #0ff;
+      --dark: #020c10;
+      --dark2: #041820;
+      --dark3: #061e27;
+      --accent: #00ffd5;
+      --text: #b0eef5;
+      --dim: #3a7a8a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--dark);
+      color: var(--text);
+      font-family: 'Rajdhani', sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* CANVAS NETWORK BACKGROUND */
+    #network-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* SCANLINE OVERLAY */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0,245,255,0.015) 2px,
+        rgba(0,245,255,0.015) 4px
+      );
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .page {
+      position: relative;
+      z-index: 2;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 3rem 0 2rem;
+      gap: 0;
+    }
+
+    .avatar-wrap {
+      position: relative;
+      width: 160px;
+      height: 160px;
+      margin-bottom: 1.8rem;
+    }
+
+    .avatar-wrap::before, .avatar-wrap::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      animation: pulse-ring 2.5s ease-out infinite;
+    }
+    .avatar-wrap::before {
+      inset: -8px;
+      border: 2px solid rgba(0,245,255,0.5);
+    }
+    .avatar-wrap::after {
+      inset: -18px;
+      border: 1px solid rgba(0,245,255,0.2);
+      animation-delay: 0.5s;
+    }
+
+    @keyframes pulse-ring {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.15); opacity: 0; }
+    }
+
+    .avatar {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top;
+      border: 3px solid var(--cyan);
+      box-shadow: 0 0 30px rgba(0,245,255,0.5), 0 0 60px rgba(0,245,255,0.2);
+      display: block;
+    }
+
+    .status-dot {
+      position: absolute;
+      bottom: 10px; right: 10px;
+      width: 18px; height: 18px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 3px solid var(--dark);
+      box-shadow: 0 0 10px var(--accent);
+      animation: blink 1.8s ease-in-out infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
+    .name {
+      font-family: 'Orbitron', monospace;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      color: #fff;
+      text-shadow: 0 0 20px var(--cyan), 0 0 40px var(--cyan2);
+      text-align: center;
+      line-height: 1.1;
+    }
+
+    .tag-line {
+      font-family: 'Share Tech Mono', monospace;
+      color: var(--cyan);
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      letter-spacing: 0.06em;
+      text-align: center;
+    }
+
+    .typing-cursor::after {
+      content: '|';
+      animation: cursor-blink 0.8s step-end infinite;
+    }
+    @keyframes cursor-blink { 0%,100%{opacity:1;} 50%{opacity:0;} }
+
+    .location {
+      font-size: 0.85rem;
+      color: var(--dim);
+      margin-top: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: 'Share Tech Mono', monospace;
+    }
+    .location::before { content: '◉'; color: var(--cyan2); }
+
+    /* ── ZYNEX BANNER ── */
+    .zynex-banner {
+      background: linear-gradient(135deg, rgba(0,245,255,0.06) 0%, rgba(0,188,212,0.03) 100%);
+      border: 1px solid rgba(0,245,255,0.2);
+      border-left: 4px solid var(--cyan);
+      border-radius: 0 8px 8px 0;
+      padding: 0.9rem 1.4rem;
+      margin: 1.8rem 0;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-family: 'Orbitron', monospace;
+    }
+    .zynex-icon {
+      font-size: 1.6rem;
+      filter: drop-shadow(0 0 8px var(--cyan));
+    }
+    .zynex-text { flex: 1; }
+    .zynex-label {
+      font-size: 0.65rem;
+      color: var(--dim);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    .zynex-name {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--cyan);
+      text-shadow: 0 0 12px var(--cyan2);
+      letter-spacing: 0.1em;
+    }
+
+    /* ── SECTION CARDS ── */
+    .section {
+      background: linear-gradient(135deg, rgba(6,30,39,0.9) 0%, rgba(4,24,32,0.95) 100%);
+      border: 1px solid rgba(0,245,255,0.12);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(4px);
+    }
+    .section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+      opacity: 0.6;
+    }
+
+    .section-title {
+      font-family: 'Orbitron', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      color: var(--cyan2);
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(0,245,255,0.3), transparent);
+    }
+
+    /* ── ABOUT ── */
+    .about-text {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+    .highlight { color: var(--cyan); font-weight: 600; }
+
+    /* ── LANGUAGES ── */
+    .lang-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 0.8rem;
+    }
+    .lang-item {
+      background: rgba(0,245,255,0.04);
+      border: 1px solid rgba(0,245,255,0.15);
+      border-radius: 8px;
+      padding: 0.8rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+    .lang-item:hover {
+      background: rgba(0,245,255,0.1);
+      border-color: var(--cyan);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(0,245,255,0.15);
+    }
+    .lang-icon { font-size: 1.4rem; }
+    .lang-name {
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    /* ── SOCIAL ── */
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 0.9rem;
+    }
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 0.9rem 1.1rem;
+      background: rgba(0,245,255,0.04);
+      border: 1px solid rgba(0,245,255,0.15);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--text);
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.85rem;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .social-link::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(0,245,255,0.08), transparent);
+      transition: left 0.4s ease;
+    }
+    .social-link:hover::before { left: 100%; }
+    .social-link:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(0,245,255,0.15);
+    }
+    .social-emoji { font-size: 1.3rem; }
+    .social-info { display: flex; flex-direction: column; }
+    .social-platform {
+      font-size: 0.7rem;
+      color: var(--dim);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    /* ── WEBSITE CARD ── */
+    .website-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem 1.4rem;
+      background: rgba(0,245,255,0.04);
+      border: 1px solid rgba(0,245,255,0.2);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--cyan);
+      font-family: 'Orbitron', monospace;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      transition: all 0.3s ease;
+    }
+    .website-card:hover {
+      background: rgba(0,245,255,0.1);
+      box-shadow: 0 0 30px rgba(0,245,255,0.2);
+      transform: translateY(-2px);
+    }
+    .website-arrow {
+      margin-left: auto;
+      font-size: 1.2rem;
+      transition: transform 0.3s;
+    }
+    .website-card:hover .website-arrow { transform: translateX(5px); }
+
+    /* ── FOOTER ── */
+    .footer {
+      text-align: center;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--dim);
+      padding-top: 2rem;
+      border-top: 1px solid rgba(0,245,255,0.08);
+    }
+
+    @media (max-width: 600px) {
+      .social-grid { grid-template-columns: 1fr 1fr; }
+      .lang-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="network-canvas"></canvas>
+
+  <div class="page">
+    <!-- HEADER -->
+    <div class="header">
+      <div class="avatar-wrap">
+        <img src="lordeagle.jpeg" alt="Lord Eagle" class="avatar"/>
+        <div class="status-dot"></div>
+      </div>
+      <h1 class="name">LORD EAGLE</h1>
+      <p class="tag-line typing-cursor">[ Ethical Hacker &amp; Pentester ]</p>
+      <p class="location">Mumbai, Maharashtra, India</p>
+    </div>
+
+    <!-- ZYNEX BANNER -->
+    <div class="zynex-banner">
+      <div class="zynex-icon">⚡</div>
+      <div class="zynex-text">
+        <div class="zynex-label">Creator &amp; Developer of</div>
+        <div class="zynex-name">ZYNEX TECH</div>
+      </div>
+      <div style="font-family:'Share Tech Mono',monospace;font-size:0.75rem;color:var(--dim);">lordeagle-tech</div>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="section">
+      <div class="section-title">// About</div>
+      <p class="about-text">
+        I am <span class="highlight">Lord Eagle</span> — an ethical hacker, penetration tester,
+        and the founder behind <span class="highlight">Zynex Tech</span>. I specialize in identifying
+        vulnerabilities, breaking systems legally, and building tools that secure the digital world.
+        Operating from <span class="highlight">Mumbai, Maharashtra, India</span>, I live at the
+        intersection of offense and defense in cybersecurity.
+      </p>
+    </div>
+
+    <!-- LANGUAGES -->
+    <div class="section">
+      <div class="section-title">// Languages &amp; Tools</div>
+      <div class="lang-grid">
+        <div class="lang-item">
+          <span class="lang-icon">🐍</span>
+          <span class="lang-name">Python</span>
+        </div>
+        <div class="lang-item">
+          <span class="lang-icon">🔷</span>
+          <span class="lang-name">C#</span>
+        </div>
+        <div class="lang-item">
+          <span class="lang-icon">🐚</span>
+          <span class="lang-name">Shell</span>
+        </div>
+        <div class="lang-item">
+          <span class="lang-icon">🐘</span>
+          <span class="lang-name">PHP</span>
+        </div>
+        <div class="lang-item">
+          <span class="lang-icon">🌐</span>
+          <span class="lang-name">JavaScript</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CONNECT -->
+    <div class="section">
+      <div class="section-title">// Connect</div>
+      <div class="social-grid">
+        <a href="https://wa.me/254717459770" target="_blank" class="social-link">
+          <span class="social-emoji">💬</span>
+          <div class="social-info">
+            <span class="social-platform">WhatsApp</span>
+            <span>+254 717 459 770</span>
+          </div>
+        </a>
+        <a href="https://instagram.com/eagle.254" target="_blank" class="social-link">
+          <span class="social-emoji">📸</span>
+          <div class="social-info">
+            <span class="social-platform">Instagram</span>
+            <span>eagle.254</span>
+          </div>
+        </a>
+        <a href="https://t.me/Eagle1591" target="_blank" class="social-link">
+          <span class="social-emoji">✈️</span>
+          <div class="social-info">
+            <span class="social-platform">Telegram</span>
+            <span>Eagle1591</span>
+          </div>
+        </a>
+        <a href="https://github.com/lordeagle-tech" target="_blank" class="social-link">
+          <span class="social-emoji">🐙</span>
+          <div class="social-info">
+            <span class="social-platform">GitHub</span>
+            <span>lordeagle-tech</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- WEBSITE -->
+    <div class="section">
+      <div class="section-title">// Website</div>
+      <a href="https://website.lordeagle.tech" target="_blank" class="website-card">
+        <span>🌐</span>
+        <span>website.lordeagle.tech</span>
+        <span class="website-arrow">→</span>
+      </a>
+    </div>
+
+    <div class="footer">
+      &lt;/&gt; LORD EAGLE © 2025 &nbsp;|&nbsp; Zynex Tech &nbsp;|&nbsp; Mumbai, India
+    </div>
+  </div>
+
+  <script>
+    // ── NETWORK CANVAS ──
+    const canvas = document.getElementById('network-canvas');
+    const ctx = canvas.getContext('2d');
+
+    let W, H, nodes = [];
+    const NODE_COUNT = 80;
+    const MAX_DIST = 160;
+    const SPEED = 1.4;
+
+    function resize() {
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', () => { resize(); init(); });
+
+    function rand(min, max) { return Math.random() * (max - min) + min; }
+
+    function init() {
+      nodes = [];
+      for (let i = 0; i < NODE_COUNT; i++) {
+        nodes.push({
+          x: rand(0, W),
+          y: rand(0, H),
+          vx: rand(-SPEED, SPEED),
+          vy: rand(-SPEED, SPEED),
+          r: rand(1.5, 3.5),
+          pulse: rand(0, Math.PI * 2)
+        });
+      }
+    }
+    init();
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+
+      // Update positions
+      for (const n of nodes) {
+        n.x += n.vx;
+        n.y += n.vy;
+        n.pulse += 0.04;
+        if (n.x < 0 || n.x > W) n.vx *= -1;
+        if (n.y < 0 || n.y > H) n.vy *= -1;
+      }
+
+      // Draw edges
+      for (let i = 0; i < nodes.length; i++) {
+        for (let j = i + 1; j < nodes.length; j++) {
+          const dx = nodes[i].x - nodes[j].x;
+          const dy = nodes[i].y - nodes[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < MAX_DIST) {
+            const alpha = (1 - dist / MAX_DIST) * 0.55;
+            ctx.beginPath();
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(nodes[j].x, nodes[j].y);
+            ctx.strokeStyle = `rgba(0,245,255,${alpha})`;
+            ctx.lineWidth = (1 - dist / MAX_DIST) * 1.2;
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Draw nodes
+      for (const n of nodes) {
+        const glow = 0.6 + 0.4 * Math.sin(n.pulse);
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(0,245,255,${glow})`;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = '#00f5ff';
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+
+      requestAnimationFrame(draw);
+    }
+    draw();
+
+    // Typing effect
+    const phrases = [
+      '[ Ethical Hacker & Pentester ]',
+      '[ Founder of Zynex Tech ]',
+      '[ Breaking Systems. Legally. ]',
+      '[ Mumbai, Maharashtra, India ]'
+    ];
+    let pi = 0, ci = 0, deleting = false, pause = 0;
+    const typingEl = document.querySelector('.tag-line');
+
+    function type() {
+      if (pause > 0) { pause--; setTimeout(type, 50); return; }
+      const full = phrases[pi];
+      if (!deleting) {
+        ci++;
+        typingEl.textContent = full.slice(0, ci);
+        if (ci === full.length) { deleting = true; pause = 40; }
+        setTimeout(type, 55);
+      } else {
+        ci--;
+        typingEl.textContent = full.slice(0, ci);
+        if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; pause = 8; }
+        setTimeout(type, 28);
+      }
+    }
+    type();
+  </script>
+</body>
+</html>
