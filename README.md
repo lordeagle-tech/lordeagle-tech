@@ -10,7 +10,7 @@
 
 **Ethical Hacker · Security Researcher · AI Builder · Automation Developer**
 
-[Website](https://website.lordeagle.tech) · [GitHub](https://github.com/lordeagle-tech) · [Telegram](https://t.me/Eagle1591) · [Instagram](https://instagram.com/eagle.254)
+[Website](https://website.lordeagle.tech) · [GitHub](https://github.com/lordeagle-tech) · [WhatsApp](https://wa.me/254114879633) · [Telegram](https://t.me/Eagle1591) · [Instagram](https://instagram.com/eagle.254)
 
 </div>
 
@@ -126,6 +126,7 @@ I build and study offensive-security tooling to understand how systems fail and 
 <p>
   <a href="https://website.lordeagle.tech"><img src="https://img.shields.io/badge/Website-00f5ff?style=for-the-badge&logo=googlechrome&logoColor=black" alt="Website" /></a>
   <a href="https://github.com/lordeagle-tech"><img src="https://img.shields.io/badge/GitHub-00f5ff?style=for-the-badge&logo=github&logoColor=black" alt="GitHub" /></a>
+  <a href="https://wa.me/254114879633"><img src="https://img.shields.io/badge/WhatsApp-00f5ff?style=for-the-badge&logo=whatsapp&logoColor=black" alt="WhatsApp" /></a>
   <a href="https://t.me/Eagle1591"><img src="https://img.shields.io/badge/Telegram-00f5ff?style=for-the-badge&logo=telegram&logoColor=black" alt="Telegram" /></a>
   <a href="https://instagram.com/eagle.254"><img src="https://img.shields.io/badge/Instagram-00f5ff?style=for-the-badge&logo=instagram&logoColor=black" alt="Instagram" /></a>
 </p>
