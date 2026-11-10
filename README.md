@@ -16,7 +16,7 @@
 
 ---
 
-### 👋 About Me
+### About Me
 
 I’m **Lord Eagle**, an ethical hacker, penetration tester, and software builder focused on practical security research, AI-assisted tooling, automation, and digital infrastructure.
 
@@ -35,7 +35,7 @@ $ building
 
 ---
 
-### ⚡ What I Do
+### What I Do
 
 - Build tools for **authorized penetration testing and security research**.
 - Develop **AI-assisted security agents**, OSINT workflows, and RAG applications.
@@ -45,7 +45,7 @@ $ building
 
 ---
 
-### 🚀 Featured Projects
+### Featured Projects
 
 | Project | Description | Stack |
 |---|---|---|
@@ -60,7 +60,7 @@ $ building
 
 ---
 
-### 🧰 Skills & Technologies
+### Skills & Technologies
 
 #### Programming
 
@@ -91,7 +91,7 @@ Linux · Docker · VPS Management · DNS · Streamlit · Node.js · Git · GitHu
 
 ---
 
-### 🛡️ Security Research
+### Security Research
 
 I build and study offensive-security tooling to understand how systems fail and how they can be better protected. My work includes web and API testing, OSINT, network analysis, wireless and USB security, vulnerability research, and AI-assisted security workflows.
 
@@ -99,7 +99,7 @@ I build and study offensive-security tooling to understand how systems fail and 
 
 ---
 
-### 🌐 Zynex Tech
+### Zynex Tech
 
 **[Zynex Tech](https://website.lordeagle.tech)** is my independent technology brand for building practical tools across:
 
@@ -110,7 +110,7 @@ I build and study offensive-security tooling to understand how systems fail and 
 
 ---
 
-### 📊 GitHub Activity
+### GitHub Activity
 
 <div align="center">
 
@@ -121,7 +121,7 @@ I build and study offensive-security tooling to understand how systems fail and 
 
 ---
 
-### 🤝 Connect With Me
+### Connect With Me
 
 <p>
   <a href="https://website.lordeagle.tech"><img src="https://img.shields.io/badge/Website-00f5ff?style=for-the-badge&logo=googlechrome&logoColor=black" alt="Website" /></a>
