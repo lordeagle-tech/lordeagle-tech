@@ -32,28 +32,12 @@ Through **[Zynex Tech](https://website.lordeagle.tech)**, I build tools that exp
 
 <pre>
 ┌──(lordeagle@zynex)-[~/about]
-└─$ ./live_mode.sh
-
-[+] Initializing security workspace...
-[+] Connecting to research environment...
-[+] Web testing       ONLINE
-[+] AI tooling        ONLINE
-[+] Threat analysis   ACTIVE
-[+] Status: Live security research
+└─$ whoami
 </pre>
 
-</div>
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&duration=2200&pause=700&color=00FF41&background=0D1117&center=true&vCenter=true&multiline=true&repeat=true&width=700&height=220&lines=%3E+Lord+Eagle;%24+focus;%3E+Security+research%2C+AI+tooling%2C+automation%2C+and+infrastructure;%24+mode;%3E+Live+security+research;%5B%2B%5D+Web+testing++++++++ONLINE;%5B%2B%5D+AI+tooling+++++++++ONLINE;%5B%2B%5D+Threat+analysis+++++ACTIVE" alt="Live whoami terminal animation" />
 
-```bash
-$ whoami
-> Lord Eagle
-$ focus
-> Security research, AI tooling, automation, and infrastructure
-$ based_in
-> Mumbai, Maharashtra, India
-$ building
-> Zynex Tech
-```
+</div>
 
 ---
 
