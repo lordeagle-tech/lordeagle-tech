@@ -1,6 +1,6 @@
 <div align="center">
 
-[![Lord Eagle](https://readme-typing-svg.demolab.com?font=Orbitron&size=28&pause=1000&color=00F5FF&background=00000000&center=true&vCenter=true&random=false&width=700&lines=Hey+There+%F0%9F%91%8B+I'm+Lord+Eagle;Ethical+Hacker+%26+Penetration+Tester;Founder+of+Zynex+Tech;AI+%7C+Security+%7C+Automation;Researching+Systems.+Securing+What+Matters.)](https://github.com/lordeagle-tech)
+[![Lord Eagle](https://readme-typing-svg.demolab.com?font=Orbitron&size=28&pause=1000&color=00F5FF&background=00000000&center=true&vCenter=true&random=false&width=700&lines=Lord+Eagle;Ethical+Hacker+%26+Penetration+Tester;Founder+of+Zynex+Tech;AI+%7C+Security+%7C+Automation;Researching+Systems.+Securing+What+Matters.)](https://github.com/lordeagle-tech)
 
 <p>
   <img src="https://komarev.com/ghpvc/?username=lordeagle-tech&label=Profile+Views&color=00f5ff&style=flat-square" alt="Profile views" />
@@ -11,6 +11,10 @@
 **Ethical Hacker · Security Researcher · AI Builder · Automation Developer**
 
 [Website](https://website.lordeagle.tech) · [GitHub](https://github.com/lordeagle-tech) · [WhatsApp](https://wa.me/254114879633) · [Telegram](https://t.me/Eagle1591) · [Instagram](https://instagram.com/eagle.254)
+
+![Security Research](https://img.shields.io/badge/Security%20Research-ACTIVE-00ff41?style=for-the-badge&labelColor=0d1117)
+![AI Automation](https://img.shields.io/badge/AI%20Automation-ONLINE-00f5ff?style=for-the-badge&labelColor=0d1117)
+![Open Source](https://img.shields.io/badge/Open%20Source-AVAILABLE-a855f7?style=for-the-badge&labelColor=0d1117)
 
 </div>
 
@@ -42,6 +46,37 @@ $ building
 - Create **messaging, workflow, and infrastructure automation**.
 - Research web, API, network, BLE, USB, and Linux security.
 - Turn technical research into practical, documented software.
+
+---
+
+### Current Focus
+
+<table>
+<tr>
+<td><b>01</b><br>AI-assisted security tooling</td>
+<td><b>02</b><br>Web and API security research</td>
+<td><b>03</b><br>OSINT and intelligence automation</td>
+</tr>
+<tr>
+<td><b>04</b><br>Secure messaging systems</td>
+<td><b>05</b><br>Self-hosted infrastructure</td>
+<td><b>06</b><br>Defensive security workflows</td>
+</tr>
+</table>
+
+<details>
+<summary>System status</summary>
+
+```text
+[ SYSTEM STATUS ]
+Security Research      ACTIVE
+AI Automation          ONLINE
+OSINT Operations       ACTIVE
+Threat Analysis        ACTIVE
+Infrastructure         MONITORED
+```
+
+</details>
 
 ---
 
@@ -96,6 +131,14 @@ Linux · Docker · VPS Management · DNS · Streamlit · Node.js · Git · GitHu
 I build and study offensive-security tooling to understand how systems fail and how they can be better protected. My work includes web and API testing, OSINT, network analysis, wireless and USB security, vulnerability research, and AI-assisted security workflows.
 
 > All security research and offensive tooling shown here is intended for authorized testing, education, defensive research, and controlled lab environments. Never test systems without explicit permission.
+
+---
+
+### Security Philosophy
+
+> Understand the attack. Improve the defense.
+
+I build security tools to identify weaknesses, improve resilience, and support authorized testing, education, and defensive research.
 
 ---
 
