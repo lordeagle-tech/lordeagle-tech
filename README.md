@@ -1,6 +1,6 @@
 <div align="center">
 
-[![Lord Eagle](https://readme-typing-svg.demolab.com?font=Orbitron&size=28&pause=1000&color=00F5FF&background=00000000&center=true&vCenter=true&random=false&width=700&lines=Lord+Eagle;Ethical+Hacker+%26+Penetration+Tester;Founder+of+Zynex+Tech;AI+%7C+Security+%7C+Automation;Researching+Systems.+Securing+What+Matters.)](https://github.com/lordeagle-tech)
+[![Lord Eagle](https://readme-typing-svg.demolab.com?font=Orbitron&size=28&pause=1000&color=00FF41&background=00000000&center=true&vCenter=true&random=false&width=700&lines=Lord+Eagle;Ethical+Hacker+%26+Penetration+Tester;Live+Security+Research+Mode;AI+%7C+Security+%7C+Automation;Researching+Systems.+Securing+What+Matters.)](https://github.com/lordeagle-tech)
 
 <p>
   <img src="https://komarev.com/ghpvc/?username=lordeagle-tech&label=Profile+Views&color=00f5ff&style=flat-square" alt="Profile views" />
@@ -26,13 +26,29 @@ I’m **Lord Eagle**, an ethical hacker, penetration tester, and software builde
 
 Through **[Zynex Tech](https://website.lordeagle.tech)**, I build tools that explore the edge of cybersecurity, artificial intelligence, messaging automation, and developer productivity.
 
+<div align="center">
+
+![Live Mode](https://img.shields.io/badge/LIVE%20MODE-ACTIVE-00ff41?style=for-the-badge&labelColor=0d1117)
+
+<pre>
+┌──(lordeagle@zynex)-[~/about]
+└─$ ./live_mode.sh
+
+[+] Initializing security workspace...
+[+] Connecting to research environment...
+[+] Web testing       ONLINE
+[+] AI tooling        ONLINE
+[+] Threat analysis   ACTIVE
+[+] Status: Live security research
+</pre>
+
+</div>
+
 ```bash
 $ whoami
 > Lord Eagle
 $ focus
 > Security research, AI tooling, automation, and infrastructure
-$ mode
-> Live hacking, coding, and authorized security research
 $ based_in
 > Mumbai, Maharashtra, India
 $ building
