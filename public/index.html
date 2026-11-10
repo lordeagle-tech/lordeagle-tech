@@ -272,17 +272,17 @@
     /* ── SOCIAL ── */
     .social-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 0.9rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
     }
     .social-link {
       display: flex;
       align-items: center;
-      gap: 0.8rem;
-      padding: 0.9rem 1.1rem;
-      background: rgba(0,245,255,0.04);
-      border: 1px solid rgba(0,245,255,0.15);
-      border-radius: 10px;
+      gap: 1rem;
+      padding: 1rem 1.1rem;
+      background: linear-gradient(135deg, rgba(0,245,255,0.08), rgba(0,245,255,0.02));
+      border: 1px solid rgba(0,245,255,0.2);
+      border-radius: 14px;
       text-decoration: none;
       color: var(--text);
       font-family: 'Share Tech Mono', monospace;
@@ -303,10 +303,25 @@
     .social-link:hover {
       border-color: var(--cyan);
       color: var(--cyan);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 20px rgba(0,245,255,0.15);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(0,245,255,0.2), inset 0 0 18px rgba(0,245,255,0.06);
     }
-    .social-emoji { font-size: 1.3rem; }
+    .social-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 42px;
+      border: 1px solid rgba(0,245,255,0.35);
+      border-radius: 11px;
+      color: var(--cyan);
+      font-family: 'Orbitron', monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      background: rgba(0,245,255,0.08);
+      box-shadow: 0 0 16px rgba(0,245,255,0.08);
+    }
     .social-info { display: flex; flex-direction: column; }
     .social-platform {
       font-size: 0.7rem;
@@ -314,6 +329,14 @@
       letter-spacing: 0.1em;
       text-transform: uppercase;
     }
+    .social-handle { margin-top: 0.25rem; color: #fff; }
+    .social-arrow {
+      margin-left: auto;
+      color: var(--dim);
+      font-size: 1.2rem;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    .social-link:hover .social-arrow { transform: translateX(4px); color: var(--cyan); }
 
     /* ── WEBSITE CARD ── */
     .website-card {
@@ -354,7 +377,7 @@
     }
 
     @media (max-width: 600px) {
-      .social-grid { grid-template-columns: 1fr 1fr; }
+      .social-grid { grid-template-columns: 1fr; }
       .lang-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
@@ -428,32 +451,36 @@
       <div class="section-title">// Connect</div>
       <div class="social-grid">
         <a href="https://wa.me/254114879633" target="_blank" class="social-link">
-          <span class="social-emoji">💬</span>
+          <span class="social-icon">WA</span>
           <div class="social-info">
             <span class="social-platform">WhatsApp</span>
-            <span>+254 114 879633</span>
+            <span class="social-handle">Message securely</span>
           </div>
+          <span class="social-arrow">→</span>
         </a>
         <a href="https://instagram.com/eagle.254" target="_blank" class="social-link">
-          <span class="social-emoji">📸</span>
+          <span class="social-icon">IG</span>
           <div class="social-info">
             <span class="social-platform">Instagram</span>
-            <span>eagle.254</span>
+            <span class="social-handle">@eagle.254</span>
           </div>
+          <span class="social-arrow">→</span>
         </a>
         <a href="https://t.me/Eagle1591" target="_blank" class="social-link">
-          <span class="social-emoji">✈️</span>
+          <span class="social-icon">TG</span>
           <div class="social-info">
             <span class="social-platform">Telegram</span>
-            <span>Eagle1591</span>
+            <span class="social-handle">@Eagle1591</span>
           </div>
+          <span class="social-arrow">→</span>
         </a>
         <a href="https://github.com/lordeagle-tech" target="_blank" class="social-link">
-          <span class="social-emoji">🐙</span>
+          <span class="social-icon">GH</span>
           <div class="social-info">
             <span class="social-platform">GitHub</span>
-            <span>lordeagle-tech</span>
+            <span class="social-handle">lordeagle-tech</span>
           </div>
+          <span class="social-arrow">→</span>
         </a>
       </div>
     </div>
