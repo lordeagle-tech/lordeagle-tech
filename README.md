@@ -31,6 +31,8 @@ $ whoami
 > Lord Eagle
 $ focus
 > Security research, AI tooling, automation, and infrastructure
+$ mode
+> Live hacking, coding, and authorized security research
 $ based_in
 > Mumbai, Maharashtra, India
 $ building
