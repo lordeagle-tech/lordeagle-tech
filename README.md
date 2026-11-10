@@ -168,12 +168,12 @@ I build security tools to identify weaknesses, improve resilience, and support a
 
 ### Connect With Me
 
-<p>
-  <a href="https://website.lordeagle.tech"><img src="https://img.shields.io/badge/Website-00f5ff?style=for-the-badge&logo=googlechrome&logoColor=black" alt="Website" /></a>
-  <a href="https://github.com/lordeagle-tech"><img src="https://img.shields.io/badge/GitHub-00f5ff?style=for-the-badge&logo=github&logoColor=black" alt="GitHub" /></a>
-  <a href="https://wa.me/254114879633"><img src="https://img.shields.io/badge/WhatsApp-00f5ff?style=for-the-badge&logo=whatsapp&logoColor=black" alt="WhatsApp" /></a>
-  <a href="https://t.me/Eagle1591"><img src="https://img.shields.io/badge/Telegram-00f5ff?style=for-the-badge&logo=telegram&logoColor=black" alt="Telegram" /></a>
-  <a href="https://instagram.com/eagle.254"><img src="https://img.shields.io/badge/Instagram-00f5ff?style=for-the-badge&logo=instagram&logoColor=black" alt="Instagram" /></a>
+<p align="center">
+  <a href="https://website.lordeagle.tech" title="Visit my website"><img src="https://img.shields.io/badge/OPEN%20WEBSITE-00ff41?style=for-the-badge&logo=googlechrome&logoColor=black&labelColor=0d1117" alt="Open Website" /></a>
+  <a href="https://github.com/lordeagle-tech" title="View my GitHub"><img src="https://img.shields.io/badge/VIEW%20GITHUB-00f5ff?style=for-the-badge&logo=github&logoColor=black&labelColor=0d1117" alt="View GitHub" /></a>
+  <a href="https://wa.me/254114879633" title="Message +254 114 879633 on WhatsApp"><img src="https://img.shields.io/badge/WHATSAPP%20%2B254%20114%20879633-25D366?style=for-the-badge&logo=whatsapp&logoColor=black&labelColor=0d1117" alt="WhatsApp +254 114 879633" /></a>
+  <a href="https://t.me/Eagle1591" title="Message me on Telegram"><img src="https://img.shields.io/badge/OPEN%20TELEGRAM-00f5ff?style=for-the-badge&logo=telegram&logoColor=black&labelColor=0d1117" alt="Open Telegram" /></a>
+  <a href="https://instagram.com/eagle.254" title="View my Instagram"><img src="https://img.shields.io/badge/VIEW%20INSTAGRAM-a855f7?style=for-the-badge&logo=instagram&logoColor=white&labelColor=0d1117" alt="View Instagram" /></a>
 </p>
 
 ---
