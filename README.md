@@ -1,6 +1,6 @@
 <div align="center">
 
-[![Lord Eagle](https://readme-typing-svg.demolab.com?font=Orbitron&size=28&pause=1000&color=00FF41&background=00000000&center=true&vCenter=true&random=false&width=700&lines=Lord+Eagle;Ethical+Hacker+%26+Penetration+Tester;Live+Security+Research+Mode;AI+%7C+Security+%7C+Automation;Researching+Systems.+Securing+What+Matters.)](https://github.com/lordeagle-tech)
+<img src="assets/zynex-banner.png" alt="Zynex Tech — Security · AI · Automation" width="100%" />
 
 <p>
   <img src="https://komarev.com/ghpvc/?username=lordeagle-tech&label=Profile+Views&color=00f5ff&style=flat-square" alt="Profile views" />
@@ -161,6 +161,14 @@ I build security tools to identify weaknesses, improve resilience, and support a
 
 <img src="https://github-readme-stats.vercel.app/api?username=lordeagle-tech&show_icons=true&hide_border=true&title_color=00f5ff&icon_color=00f5ff&text_color=ffffff&bg_color=0d1117" alt="Lord Eagle's GitHub statistics" height="170" />
 <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=lordeagle-tech&layout=compact&hide_border=true&title_color=00f5ff&text_color=ffffff&bg_color=0d1117" alt="Lord Eagle's top languages" height="170" />
+
+</div>
+
+### Recent Activity
+
+<div align="center">
+
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=lordeagle-tech&bg_color=0d1117&color=00f5ff&line=00ff41&point=ffffff&area=true&hide_border=true" alt="Lord Eagle's GitHub contribution activity graph" width="100%" />
 
 </div>
 
