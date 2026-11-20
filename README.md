@@ -77,14 +77,50 @@ Infrastructure         MONITORED
 
 ### Featured Projects
 
-| Project | Description | Stack |
-|---|---|---|
-| [CampusIQ](https://github.com/lordeagle-tech/aihelper) | AI-powered campus intelligence platform that classifies notices, extracts deadlines, generates summaries, and answers questions with cited local evidence. | Python · Streamlit · RAG · AI/ML |
-| [Eagle Baileys](https://github.com/lordeagle-tech/eagle-baileys) | WhatsApp and messaging automation project for the Zynex ecosystem. | JavaScript · Node.js |
-| [Zynex MD](https://github.com/lordeagle-tech/zynex-MD) | Messaging automation project built for experimentation and extensible bot workflows. | JavaScript · Node.js |
-| [ToothPaste](https://github.com/lordeagle-tech/ToothPaste) | Secure wireless data transfer over BLE and USB for authorized security testing and media control. | TypeScript · BLE · USB |
-| [Shannon](https://github.com/lordeagle-tech/shannon) | AI-assisted web application and API security analysis for discovering and validating vulnerabilities. | TypeScript · AI · AppSec |
-| [ZimZilla](https://github.com/lordeagle-tech/ZimZilla) | Offensive security and OSINT automation platform for authorized testing and research. | Python · OSINT · Security |
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🧠 <a href="https://github.com/lordeagle-tech/aihelper">CampusIQ</a></h3>
+      <p>AI-powered campus intelligence that classifies notices, extracts deadlines, summarizes updates, and answers questions with cited evidence.</p>
+      <p><code>Python</code> · <code>Streamlit</code> · <code>RAG</code> · <code>AI/ML</code></p>
+      <a href="https://github.com/lordeagle-tech/aihelper">View project →</a>
+    </td>
+    <td width="50%" valign="top">
+      <h3>💬 <a href="https://github.com/lordeagle-tech/eagle-baileys">Eagle Baileys</a></h3>
+      <p>WhatsApp and messaging automation for the Zynex ecosystem.</p>
+      <p><code>JavaScript</code> · <code>Node.js</code></p>
+      <a href="https://github.com/lordeagle-tech/eagle-baileys">View project →</a>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🤖 <a href="https://github.com/lordeagle-tech/zynex-MD">Zynex MD</a></h3>
+      <p>Extensible messaging automation built for experimentation and custom bot workflows.</p>
+      <p><code>JavaScript</code> · <code>Node.js</code></p>
+      <a href="https://github.com/lordeagle-tech/zynex-MD">View project →</a>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🔐 <a href="https://github.com/lordeagle-tech/ToothPaste">ToothPaste</a></h3>
+      <p>Secure BLE and USB data transfer for authorized testing and media control.</p>
+      <p><code>TypeScript</code> · <code>BLE</code> · <code>USB</code></p>
+      <a href="https://github.com/lordeagle-tech/ToothPaste">View project →</a>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🛡️ <a href="https://github.com/lordeagle-tech/shannon">Shannon</a></h3>
+      <p>AI-assisted web and API security analysis to help discover and validate vulnerabilities.</p>
+      <p><code>TypeScript</code> · <code>AI</code> · <code>AppSec</code></p>
+      <a href="https://github.com/lordeagle-tech/shannon">View project →</a>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🔎 <a href="https://github.com/lordeagle-tech/ZimZilla">ZimZilla</a></h3>
+      <p>Offensive security and OSINT automation for authorized testing and research.</p>
+      <p><code>Python</code> · <code>OSINT</code> · <code>Security</code></p>
+      <a href="https://github.com/lordeagle-tech/ZimZilla">View project →</a>
+    </td>
+  </tr>
+</table>
 
 > Explore more work in my [repositories](https://github.com/lordeagle-tech?tab=repositories).
 
